@@ -1,0 +1,13 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.tooltip {
+  display: inline-flex;
+  flex-direction: column;
+  color: var(--color-white);
+  font-size: var(--size-xs);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  border-radius: var(--size-sm);
+  padding: var(--size-sm);
+}

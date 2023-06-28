@@ -1,0 +1,190 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--size-default);
+  z-index: 999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    pointer-events: all;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--size-default);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    border-color: $green;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vmax;
+    margin: 0;
+    color: $black;
+    padding-top: 150px;
+    transition: all .18s ease-in .15s;
+    @include breakpoint(sm) {
+      flex-direction: row;
+      height: auto;
+      width: auto;
+      border: 3px solid $black;
+      align-items: center;
+      justify-content: center;
+      gap: var(--size-xs);
+      border: 3px solid $black;
+      background: $green;
+      padding: 5px var(--size-sm);
+      border-radius: 100px;
+      position: unset;
+      visibility: hidden;
+    }
+    a {
+      font-family: var(--font-kyra-bold);
+      font-size: var(--size-md);
+      text-transform: lowercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--size-xs) var(--size-sm);
+      color: inherit;
+      width: 100%;
+      @include breakpoint(sm){
+        font-size: 18px;
+        position: relative;
+        overflow: hidden;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 10px;
+          border-radius: 100px;
+          left: 50%;
+          width: 0%;
+          height: 3px;
+          background: rgba($black,1);
+          transform: translateX(-50%);
+          transition: all .18s ease 0s;
+        }
+        &.active {
+          &:after {
+            width: 50%;
+          }
+        }
+        &:hover {
+          &:after {
+            width: 50%;
+          }
+        }
+      }
+    }
+    &.navOpen {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 0;
+      border-color: $green;
+      z-index: 9999;
+      width: 100vw;
+      height: 100vmax;
+      margin: 0;
+      color: $black;
+      opacity: 1;
+      visibility: visible;
+      @include breakpoint(sm){
+        position: unset;
+        width: auto;
+        height: auto;
+        border-radius: 100px;
+        flex-direction: row;
+        border-color: $black;
+      }
+    }
+    &.navClosed {
+      opacity: 0;
+      visibility: hidden;
+      transition: all .18s ease-out 0s;
+      @include breakpoint(sm) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .mobileControl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    pointer-events: all;
+    @include breakpoint(sm) {
+      display: none;
+    }
+    .burger {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 3px solid $black;
+      background: $green;
+      border-radius: 50%;
+      z-index: 9999;
+      &:hover {
+        cursor: pointer;
+      }
+      .line {
+        display: inline-block;
+        width: 14px;
+        height: 1px;
+        background: $black;
+      }
+      &.navOpen {
+        background: $green;
+      }
+      &.navClosed {
+        background: $green;
+      }
+    }
+    .circleBg {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $green;
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      aspect-ratio: 1/1;;
+      transition: all .3s ease-out;
+      z-index: 999;
+      &.navOpen {
+        width: 300vmax;
+        height: 300vmax;
+      }
+      &.navClosed {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}

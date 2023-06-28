@@ -1,0 +1,13 @@
+// @use "/src/scss/variables.scss" as *;
+// @use "/src/scss/breakpoints.scss" as *;
+
+.bar {
+  background-color: red;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: width 0.2s ease-in-out;
+}

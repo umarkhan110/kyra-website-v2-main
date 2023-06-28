@@ -1,0 +1,54 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.chartSection {
+  display: block;
+  width: 100%;
+  color: var(--color-white);
+
+  h2 {
+    font-family: var(--font-kyra-bold);
+    font-size: var(--size-default);
+    margin: 0 0 var(--size-sm) 0;
+    text-transform: lowercase;
+  }
+
+  .chartWrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: var(--size-default);
+  }
+
+  .chartNav {
+    display: flex;
+    flex-direction: row;
+    button {
+      display: flex;
+      flex-direction: column;
+      appearance: none;
+      flex: 1;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid var(--color-gray);
+      display: flex;
+      justify-content: flex-start;
+      font-family: var(--font-kyra-bold);
+      font-size: var(--size-xs);
+      color: var(--color-white);
+      line-height: 1;
+      padding: var(--size-sm) 0;
+      cursor: pointer;
+      transition: all 0.18s ease-in-out; 
+      &:hover,
+      &.active {
+        border-bottom: 2px solid var(--color-white);
+      }
+      span {
+        font-family: var(--font-kyra-regular);
+        font-size: var(--size-sm);
+        margin-top: calc(var(--size-sm) / 2);
+      }
+    }
+  }
+}

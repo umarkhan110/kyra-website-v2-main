@@ -1,0 +1,71 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.footerWrapper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  padding: var(--margin-md) var(--size-md) 0 var(--size-md);
+
+  @include breakpoint(md){
+    padding: 192px 2rem 0 2rem;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLogo {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: translateY(40%);
+    @include breakpoint(md){
+      width: 700px;
+      top: -50px;
+      transform: translateY(55%);
+    }
+  }
+
+  p {
+    font-size: 14px;
+    @include breakpoint(md){
+      font-size: var(--size-sm);
+    }
+  }
+
+  .footerNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--size-md);
+    @include breakpoint(md){
+      flex-direction: row;
+      width: 100%;
+    }
+    li {
+      list-style-type: none;
+      a {
+        font-family: var(--font-kyra-expanded-regular);
+        font-size: var(--size-sm);
+        line-height: 1;
+        text-transform: lowercase;
+        color: $black;
+        display: inline-flex;
+        padding: 1rem;
+        @include breakpoint(md){
+          font-size: var(--size-sm);
+        }
+        @include breakpoint(lg){
+          font-size: var(--size-default);
+        }
+      }
+    }
+  }
+}

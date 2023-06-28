@@ -1,0 +1,153 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+li.trendUser {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  counter-increment: trends-counter;
+  > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--size-default);
+    width: 100%;
+    border: 3px solid $black;
+    border-radius: var(--border-radius);
+    padding: var(--size-default);
+    color: inherit;
+    @include breakpoint('sm') {
+      gap: var(--size-sm);
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    @include breakpoint('md') {
+      gap: var(--size-lg);
+    }
+    &:before {
+      display: inline-flex;
+      width: 110px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      content: counter(trends-counter, decimal-leading-zero);
+      font-family: var(--font-kyra-expanded-bold);
+      font-size: var(--size-lg);
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: $black;
+      color: transparent;
+      align-self: center;
+      @include breakpoint('sm') {
+        font-size: var(--size-md);
+        width: 80px;
+      }
+      @include breakpoint('md') {
+        font-size: var(--size-lg);
+        width: 110px;
+      }
+    }
+  }
+}
+.userContent {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-default);
+  width: 100%;
+  @include breakpoint('sm') {
+    justify-content: flex-start;
+    flex-direction: row;
+    width: auto;
+  }
+  .userAvatar {
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px solid $black;
+    border-radius: 100%;
+    background: rgba($black,.5);
+    overflow: hidden;
+    @include breakpoint('sm') {
+      width: 80px;
+      height: 80px;
+    }
+    @include breakpoint('md') {
+      width: 100px;
+      height: 100px;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+  .userDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    @include breakpoint('sm') {
+      text-align: left;
+      align-items: flex-start;
+      max-width: 280px;
+    }
+    @include breakpoint('md') {
+      max-width: 440px;
+    }
+    h2 {
+      font-family: var(--font-kyra-expanded-bold);
+      font-size: var(--size-default);
+      margin: 0 0 var(--size-xs) 0;
+      line-height: 1;
+      display:block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @include breakpoint('sm') {
+        font-size: var(--size-sm);
+        max-width: 260px;
+      }
+      @include breakpoint('lg') {
+        font-size: var(--size-default);
+      }
+    }
+    span {
+      font-family: var(--font-kyra-expanded-bold);
+      font-size: var(--size-xs);
+      margin: 0;
+      @include breakpoint('lg') {
+        font-size: var(--size-sm);
+      }
+    }
+  }
+}
+.userLatest {
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--size-default);
+  margin-left: auto;
+  @include breakpoint('sm') {
+    display: flex;
+  }
+  a {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 100px;
+    border: 3px solid $black;
+    border-radius: calc(var(--size-sm) / 2);
+    background: rgba($black,.5);
+    text-decoration: none;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+    }
+  }
+
+}

@@ -1,0 +1,46 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.cookieBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--size-default);
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 620px;
+  backdrop-filter: blur(4px);
+  background: rgba($black,.8);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: var(--size-sm);
+  margin: var(--size-default) 0;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+  @include breakpoint(sm) {
+    flex-direction: row;
+  }
+
+  &.flex {
+    display: flex;
+  }
+  &.hidden {
+    display: none;
+  }
+
+  .text {
+    a {
+      color: $green;
+      display: inline-block;
+      margin-left: 4px;
+    }
+  }
+
+  .buttons {
+    display: inline-flex;
+    gap: var(--size-sm);
+  }
+}

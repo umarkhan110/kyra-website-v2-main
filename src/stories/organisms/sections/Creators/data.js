@@ -1,0 +1,122 @@
+export const creatorsData = [
+  {
+    "id":1,
+    "attributes":{
+       "name":"Tony Stark",
+       "handle":"ironman",
+       "quote":"When Tony Stark, an industrialist, is captured, he constructs a high-tech armoured suit to escape. Once he manages to escape, he decides to use his suit to fight against evil forces to save the world.",
+       "avatar":{
+          "data":{
+             "attributes":{
+                "width":480,
+                "height":480,
+                "formats":{
+                   "thumbnail":{
+                      "url":"/public/images/sb/iron-man-square.jpg",
+                      "width":156,
+                      "height":156
+                   }
+                },
+                "url":"/public/images/sb/iron-man-square.jpg",
+             }
+          }
+       }
+    }
+  },
+  {
+    "id":2,
+    "attributes":{
+       "name":"Steve Rogers",
+       "handle":"captainamerica",
+       "quote":"Before being injected with Super Soldier Serum and bombarded with Vita Rays, Steve Rogers was just a puny, pipsqueak, wannabe GI.",
+       "avatar":{
+          "data":{
+             "attributes":{
+                "width":480,
+                "height":480,
+                "formats":{
+                   "thumbnail":{
+                      "url":"/public/images/sb/captain-america-square.jpg",
+                      "width":156,
+                      "height":156
+                   }
+                },
+                "url":"/public/images/sb/captain-america-square.jpg",
+             }
+          }
+       }
+    }
+  },
+  {
+    "id":3,
+    "attributes":{
+       "name":"Thor Odinson",
+       "handle":"thor",
+       "quote":"Asgardian God of Thunder Thor Odinson isn't the smartest of the Avengers, but he is awesomely powerful, very loyal, supremely confident, and funnier than most deities we can think of.",
+       "avatar":{
+          "data":{
+             "attributes":{
+                "width":480,
+                "height":480,
+                "formats":{
+                   "thumbnail":{
+                      "url":"/public/images/sb/thor-square.jpg",
+                      "width":156,
+                      "height":156
+                   }
+                },
+                "url":"/public/images/sb/thor-square.jpg",
+             }
+          }
+       }
+    }
+  },
+  {
+    "id":4,
+    "attributes":{
+       "name":"Natasha Romanova",
+       "handle":"blackwidow",
+       "quote":"A deadly assassin is closing in on Natasha Romanoff. Now Natasha must reunite with an unlikely group of spies from her past in order to survive and stop a lethal force from being unleashed on the world.",
+       "avatar":{
+          "data":{
+             "attributes":{
+                "width":480,
+                "height":480,
+                "formats":{
+                   "thumbnail":{
+                      "url":"/public/images/sb//black-widow-square.jpg",
+                      "width":156,
+                      "height":156
+                   }
+                },
+                "url":"/public/images/sb//black-widow-square.jpg",
+             }
+          }
+       }
+    }
+  },
+  {
+    "id":5,
+    "attributes":{
+       "name":"Peter Quill",
+       "handle":"starlord",
+       "quote":"Half-human, half-alien, Peter Quill is an irrepressible force of nature - a born joker who wears his remarkable combat skills so lightly that it's easy to overlook what an asset he can be in a fight.",
+       "avatar":{
+          "data":{
+             "attributes":{
+                "width":480,
+                "height":480,
+                "formats":{
+                   "thumbnail":{
+                      "url":"/public/images/sb//star-lord-square.jpg",
+                      "width":156,
+                      "height":156
+                   }
+                },
+                "url":"/public/images/sb//star-lord-square.jpg",
+             }
+          }
+       }
+    }
+  },
+]

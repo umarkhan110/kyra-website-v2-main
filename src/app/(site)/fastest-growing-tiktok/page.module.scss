@@ -1,0 +1,66 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.overflow {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+.trendsPage {
+  display: block;
+  @include container(md);
+
+  .pageHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: calc(var(--size-lg) * 2) var(--size-md) var(--size-lg);
+
+    h1 {
+      font-family: var(--font-kyra-thin);
+      font-style: normal;
+      font-weight: 100;
+      line-height: 1em;
+      color: $black;
+      margin-bottom: var(--size-lg);
+      text-transform: lowercase;
+      text-align: center;
+      b {
+        font-family: var(--font-kyra-expanded-bold-italic);
+        font-style: italic;
+      }
+      @include breakpoint('lg') {
+        font-size: 5.9vw;
+      }
+    }
+  }
+}
+
+.trendsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  ol.trends {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--size-xs);
+    list-style: none;
+    counter-reset: trends-counter;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+p.bulletin {
+  font-family: var(--font-kyra-expanded-bold-italic);
+  font-size: var(--size-default);
+  margin: 0 auto var(--size-default) auto;
+  line-height: 1;
+  display: block;
+  text-align: center;
+  max-width: 80%;
+}

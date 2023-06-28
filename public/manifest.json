@@ -1,0 +1,18 @@
+{
+  "name": "Kyra - The home of creators",
+  "short_name": "Kyra Website",
+  "description": "Our mission is to empower and inspire a new generation of creators.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#bbef44",
+  "theme_color": "#bbef44",
+  "icons": [
+    {
+      "src": "/images/touch-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

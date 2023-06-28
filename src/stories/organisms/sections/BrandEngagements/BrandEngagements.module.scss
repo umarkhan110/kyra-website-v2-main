@@ -1,0 +1,65 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sectionEngagements {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: var(--size-xl) 0;
+  background: $black;
+  color: $green;
+  @include breakpoint(md){
+    padding: var(--padding-section);
+  }
+
+  &.green {
+    background: $green;
+    color: $black;
+  }
+
+  .container {
+    @include container(lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardContainer {
+    @include container(lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  h2 {
+    font-family: var(--font-kyra-expanded-bold-italic);
+    font-style: italic;
+    font-size: var(--size-md);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    margin: 0;
+    margin-bottom: var(--size-lg);
+    text-align: center;
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+      text-align: left;
+      align-self: start;
+    }
+  }
+
+  nav.inlineList {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-bottom: var(--size-lg);
+    gap: var(--size-default);
+    @include breakpoint(md){
+      margin-bottom: calc(var(--size-lg) * 3);
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+}

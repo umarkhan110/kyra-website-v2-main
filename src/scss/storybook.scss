@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Kyra-Regular";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-Regular.woff2");
+}
+@font-face {
+  font-family: "Kyra-Regular";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-Bold.woff2");
+}
+@font-face {
+  font-family: "Kyra-Bold-Italic";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-BoldItalic.woff2");
+}
+@font-face {
+  font-family: "Kyra-Thin";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-Thin.woff2");
+}
+@font-face {
+  font-family: "Kyra-Black";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-Black.woff2");
+}
+@font-face {
+  font-family: "Kyra-Expanded-Regular";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-ExpandedRegular.woff2");
+}
+@font-face {
+  font-family: "Kyra-Expanded-Bold";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-ExpandedBold.woff2");
+}
+@font-face {
+  font-family: "Kyra-Expanded-Bold-Italic";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-ExpandedBoldItalic.woff2");
+}
+@font-face {
+  font-family: "Kyra-Expanded-Thin";
+  src: url("../assets/fonts/KyraWOFF2/Kyra-ExpandedThin.woff2");
+}
+
+:root {
+  --font-kyra-regular: "Kyra-Regular", sans-serif;
+  --font-kyra-bold: "Kyra-Bold", sans-serif;
+  --font-kyra-bold-italic: "Kyra-Bold-Italic", sans-serif;
+  --font-kyra-thin: "Kyra-Thin", sans-serif;
+  --font-kyra-black: "Kyra-Black", sans-serif;
+  --font-kyra-expanded-regular: "Kyra-Expanded-Regular", sans-serif;
+  --font-kyra-expanded-bold: "Kyra-Expanded-Bold", sans-serif;
+  --font-kyra-expanded-bold-italic: "Kyra-Expanded-Bold-Italic", sans-serif;
+  --font-kyra-expanded-thin: "Kyra-Expanded-Thin", sans-serif;
+}
+
+.padded {
+  padding: 2rem;
+}
+
+.scroll {
+  display: block;
+  min-height: 200vh;
+}
+
+.cardWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marquee {
+  display: block;
+  width: 100%;
+  background: black;
+  padding: 50vh 0;
+  height: 100%;
+}
+
+.centerContentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.accordionWrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: #000;
+  &.dark {
+    background: transparent;
+  }
+}

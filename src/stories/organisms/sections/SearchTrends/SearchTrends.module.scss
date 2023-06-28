@@ -1,0 +1,63 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.searchWrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: var(--size-default);
+    width: calc(100% - var(--size-default) * 2);
+    background: var(--color-white);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: var(--size-xs);
+      &:first-of-type {
+        border-top: 1px solid #f5f5f5;
+      }
+      &:focus {
+        background: #f5f5f5;
+        font-family: var(--font-kyra-bold);
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
+
+.searchBoxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 100px;
+  padding: 0 var(--size-sm);
+
+  .searchIcon {
+    color: #ccc;
+    font-size: var(--size-md);
+  }
+
+  input {
+    appearance: none;
+    border:none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: var(--size-default);
+    padding: var(--size-xs);
+    line-height: 1;
+    color: var(--color-black);
+    &::placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+  }
+}

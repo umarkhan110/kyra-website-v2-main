@@ -1,0 +1,20 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.brandScroll {
+  .slick-track {
+    display: flex;
+    gap: var(--size-sm);
+  }
+  .slick-slide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

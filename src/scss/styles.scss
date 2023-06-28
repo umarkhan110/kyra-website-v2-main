@@ -1,0 +1,53 @@
+@use './breakpoints';
+@use './variables' as *;
+@import './normalize';
+
+:root {
+  --size-default: 24px;
+  --size-xs: 12px;
+  --size-sm: 16px;
+  --size-md: 32px;
+  --size-lg: 48px;
+  --size-xl: 80px;
+
+  --border-radius: var(--size-default);
+  
+  --margin-default: var(--size-default);
+  --margin-lg: calc(var(--size-lg) * 2);
+  --margin-md: calc(var(--size-md) * 2);
+  --margin-sm: var(--size-md);
+
+  --padding-section: calc(var(--size-lg) * 4) var(--size-md);
+
+  --color-primary: #{$brand};
+  --color-white: #{$white};
+  --color-black: #{$black};
+  --color-gray: #{$gray};
+  --color-brand: var(--color-primary);
+  --color-green: #{$green};
+  --color-pink: #{$pink};
+  --color-orange: #{$orange};
+  --color-blue: #{$blue};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: var(--color-green);
+  font-family: var(--font-kyra-regular), sans-serif;
+  font-size: 16px;
+}
+
+a,
+a:active,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h4 {
+  display: inline-block;
+}

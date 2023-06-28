@@ -1,0 +1,36 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$brand: #bbef44;
+
+$green: $brand;
+$orange: #f36c00;
+$pink: #EC96CF;
+$blue: #5DC7FF;
+
+$primary: $brand;
+$secondary: $black;
+
+$gray: #333333;
+
+// Sections
+$sectionPadding: 192px 2rem;
+
+// Breakpoints Variables
+$breakpoints: (
+  'xs': (
+    min-width: 480px,
+  ),
+  'sm': (
+    min-width: 768px,
+  ),
+  'md': (
+    min-width: 992px,
+  ),
+  'lg': (
+    min-width: 1200px,
+  ),
+  'xl': (
+    min-width: 1860px,
+  ),
+) !default;

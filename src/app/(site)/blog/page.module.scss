@@ -1,0 +1,28 @@
+@use '/src/scss/variables' as *;
+@use '/src/scss/breakpoints' as *;
+
+.page {
+  display: block;
+  @include container(md);
+  padding: 140px var(--size-md) var(--size-default) var(--size-md);
+  @include breakpoint('md') {
+    padding: calc(var(--size-lg) * 3) var(--size-md) 0 var(--size-md);
+  }
+}
+
+.pageHeader {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--size-default);
+
+  h1 {
+    font-size: var(--size-lg);
+    line-height: 1;
+    margin: 0 0 var(--size-default) 0;
+    text-transform: lowercase;
+    @include breakpoint('sm') {
+      font-size: 5vw;
+    }
+  }
+}

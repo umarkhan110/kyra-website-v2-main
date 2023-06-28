@@ -1,0 +1,31 @@
+@use '/src/scss/variables' as *;
+@use '/src/scss/breakpoints' as *;
+
+.creatorWrap {
+  display: grid;
+  grid-template-columns: 1;
+  gap: var(--size-lg);
+  position: relative;
+  width: 100%;
+  padding: 0 var(--size-default) var(--size-default) var(--size-default);
+
+  @include breakpoint(sm){
+    grid-template-columns: 400px 1fr;
+  }
+
+  .creatorContent {
+    @include breakpoint(sm){
+      padding-top: 120px;
+    }
+
+    h3 {
+      font-family: var(--font-kyra-bold);
+      font-size: var(--size-default);
+      margin: 0 0 var(--size-sm) 0;
+      color: var(--color-white);
+      text-transform: lowercase;
+    }
+  }
+}
+
+

@@ -1,0 +1,63 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  text-transform: lowercase;
+  font-family: var(--font-kyra-expanded-regular);
+  cursor: pointer;
+  transition: all .18s ease-in-out;
+  line-height: 1;
+  padding: 20px; 
+  font-size: var(--size-sm);
+  @include breakpoint('md') {
+    font-size: var(--size-default);
+  }
+
+  &.sm {
+    padding: 10px;
+    font-size: var(--size-sm);
+  }
+
+  &.lg {
+    padding: var(--size-default);
+    font-size: var(--size-deafault);
+    @include breakpoint('md') {
+      padding: 40px;
+      font-size: var(--size-md);
+    }
+  }
+
+  // Fill
+  &.fill {
+    width: 100%;
+  }
+
+  // Primary
+  background: rgba($green, 0);
+  color: $primary;
+  border: 2px solid $primary;
+
+  // Hover 
+  &:hover {
+    background: rgba($green, .25);
+  }
+
+  // Secondary
+  &.dark {
+    background: rgba($black, 0);
+    color: $black;
+    border: 2px solid $black;
+    &:hover {
+      background: rgba($black, 0.25);
+    }
+  }
+
+  // Light Text
+  &.lightText {
+    border: none;
+  }
+}

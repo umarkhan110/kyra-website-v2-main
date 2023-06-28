@@ -1,0 +1,41 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sectionReview {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  padding: var(--size-xl) 0;
+  background: $green;
+  color: $black;
+  @include breakpoint(md){
+    padding: var(--padding-section);
+  }
+
+  &.dark {
+    background: $black;
+    color: $green;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-family: var(--font-kyra-bold-italic);
+    font-style: italic;
+    font-size: var(--size-md);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    text-align: center;
+    margin: 0;
+    margin-bottom: var(--size-lg);
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+      margin-bottom: calc(var(--size-lg) * 4);
+    }
+  }
+}

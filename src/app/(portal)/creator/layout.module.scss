@@ -1,0 +1,8 @@
+@use '../../../scss/breakpoints';
+@use '../../../scss/variables' as *;
+
+body.dark {
+  background: var(--color-black);
+  color: var(--color-green);
+  min-height: 100vh;
+}

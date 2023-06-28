@@ -1,0 +1,80 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sectionBlank {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  padding: var(--size-xl) 0;
+  background: $green;
+  color: $black;
+  @include breakpoint(md){
+    padding: var(--padding-section);
+  }
+
+  &.slim {
+    padding: var(--size-xl) 0;
+    @include breakpoint(md){
+      padding: var(--size-xl) 0;
+    }
+  }
+  
+  &.dark {
+    background: $black;
+    color: $green;
+  }
+
+  .container {
+    @include container(lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(md){
+      text-align: center;
+    }
+    &.left {
+      align-items: center;
+      @include breakpoint(md){
+        text-align: left;
+        align-items: flex-start;
+        p {
+          text-align: inherit;
+        }
+      }
+    }
+    &.right {
+      align-items: center;
+      @include breakpoint(md){
+        text-align: right;
+        align-items: flex-end;
+        p {
+          text-align: inherit;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-family: var(--font-kyra-expanded-bold-italic);
+    font-style: italic;
+    font-size: var(--size-md);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    margin: 0;
+    margin-bottom: var(--size-lg);
+    text-align: center;
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+      text-align: inherit;
+    }
+  }
+
+  p {
+    margin-bottom: var(--size-md);
+    font-size: var(--size-default);
+    line-height: 1.2em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,44 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.odometerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: var(--padding-section);
+  padding-top: 0;
+  background: $green;
+  color: $black;
+  font-family: var(--font-kyra-thin);
+  font-size: calc(var(--size-lg) - 8px);
+  line-height: 1;
+  overflow: hidden;
+  @include breakpoint(sm){
+    font-size: 100px;
+  }
+
+  &.dark {
+    background: $black;
+    color: $green;
+  }
+
+  .odometer {
+    margin-bottom: var(--size-sm);
+    @include breakpoint(sm){
+      margin-bottom: var(--margin-default);
+    }
+  }
+  .label {
+    font-family: var(--font-kyra-expanded-bold);
+    font-size: var(--size-sm);
+    line-height: 1;
+    text-transform: lowercase;
+    text-align: center;
+    @include breakpoint(sm){
+      font-size: var(--size-default);
+    }
+  }
+}

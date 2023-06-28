@@ -1,0 +1,85 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sectionPlatform {
+  display: block;
+  width: 100%;
+  // overflow: hidden;
+  margin-top: auto;
+  padding: var(--size-xl) 0;
+  background: $green;
+  color: $black;
+  @include breakpoint(md){
+    padding: var(--padding-section);
+  }
+
+  .container {
+    @include container(lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-family: var(--font-kyra-expanded-bold-italic);
+    font-style: italic;
+    font-size: var(--size-md);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    margin: 0;
+    margin-bottom: var(--size-lg);
+    text-align: center;
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+      text-align: left;
+    }
+  }
+  
+  .columns {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr); // Fix Column Width as per design
+    gap: var(--size-lg);
+    @include breakpoint(md){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .columnContent {
+    order: 1;
+    text-align: center;
+    @include breakpoint(md){
+      order: 0;
+      text-align: left;
+    }
+    p {
+      font-family: var(--font-kyra-expanded-regular);
+      margin-bottom: var(--size-default);
+      font-size: var(--size-default);
+      @include breakpoint(md){
+        font-size: var(--size-md);
+      }
+    }
+  }
+
+  .imageWrap {
+    display: flex;
+    position: sticky;
+    top: 10px;
+    background: $pink;
+    border: 4px solid black;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: var(--size-default) 0 var(--size-default) var(--size-default);
+    order: 0;
+    @include breakpoint(md){
+      order: 1;
+      padding: var(--size-lg) 0 var(--size-lg) var(--size-lg);
+    }
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+@keyframes loading{
+  0%{
+    background-position: -500px 0
+  }
+  100%{
+    background-position: 500px 0
+  }
+}
+
+.creatorPosts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+  margin-bottom: var(--size-md);
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-sm);
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--size-default);
+    @include breakpoint(md){
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .loadingPost {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 300/400;
+    overflow: hidden;
+    border-radius: var(--size-sm);
+    background: lighten(#000, 15%);
+    background: linear-gradient(to right, lighten(#000, 15%) 8%, lighten(#000, 20%) 38%, lighten(#000, 15%) 54%);
+    background-size: 500px 500px;
+  
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: loading;
+    animation-timing-function: linear;
+  }
+
+  .post {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 300/400;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: var(--size-sm);
+    background: lighten(#000, 15%);
+    background: linear-gradient(to right, lighten(#000, 15%) 8%, lighten(#000, 20%) 38%, lighten(#000, 15%) 54%);
+    background-size: 500px 500px;
+  
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: loading;
+    animation-timing-function: linear;
+
+    .postImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      transition: opacity .18s ease-in-out;
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      .postImage {
+        opacity: 0;
+      }
+    }
+
+    .postVideo {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .postMeta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--size-xs);
+      position: absolute;
+      bottom: var(--size-xs);
+      left: var(--size-xs);
+      z-index: 5;
+      @include breakpoint(md){
+        bottom: var(--size-sm);
+        left: var(--size-sm);
+      }
+    }
+
+    .brandLogo {
+      display: block;
+      width: 64px;
+      height: 64px;
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    .brandName {
+      font-family: var(--font-kyra-bold);
+      font-size: var(--size-sm);
+      color: var(--color-white);
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(0,0,0,0.4);
+    }
+
+    .views,
+    .engagement {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: calc(var(--size-xs) / 2);
+      background: var(--color-green);
+      border-radius: calc(var(--size-sm) / 2);
+      padding: calc(var(--size-sm) / 2);
+      color: var(--color-black);
+      font-size: var(--size-sm);
+      @include breakpoint(md){
+        gap: var(--size-xs);
+        font-size: 20px;
+      }
+      span {
+        display: inline-block;
+        font-family: var(--font-kyra-regular);
+        font-size: var(--size-xs);
+        line-height: 1;
+      }
+    }
+    .engagement {
+      background: var(--color-pink);
+    }
+  }
+}

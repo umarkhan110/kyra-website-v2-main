@@ -1,0 +1,81 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.formWrapper {
+  display: block;
+  width: 100%;
+}
+
+.response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-black);
+  padding: var(--size-default);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  font-size: var(--size-sm);
+  font-family: var(--font-kyra-bold-expanded);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-black);
+  padding: var(--size-default);
+  border-radius: var(--border-radius);
+
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"] {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: var(--size-xs);
+    padding: var(--size-sm);
+    background: var(--color-white);
+    color: var(--color-black);
+    border: none;
+    outline: none;
+    font-size: var(--size-sm);
+    margin-bottom: var(--size-default);
+  }
+
+  h2 {
+    font-size: var(--size-md) !important;
+    font-family: var(--font-kyra-bold-expanded) !important;
+    color: var(--color-brand) !important;
+    margin: 0 0 var(--size-default) 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    b {
+      font-family: var(--font-kyra-expanded-bold-italic) !important;
+      font-style: italic !important;
+    }
+  }
+
+  .submit {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    border-radius: var(--size-xs);
+    padding: var(--size-sm);
+    background: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    outline: none;
+    font-size: var(--size-default);
+    font-family: var(--font-kyra-bold-expanded);
+  }
+}

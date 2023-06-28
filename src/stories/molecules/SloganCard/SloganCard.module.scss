@@ -1,0 +1,45 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sloganCard {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--size-lg);
+  @include breakpoint(md){
+    margin-bottom: calc(var(--size-lg) * 4);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .container {
+    @include container(xl);
+  }
+
+  h3 {
+    font-family: var(--font-kyra-expanded-thin);
+    font-style: normal;
+    font-weight: 50;
+    font-size: var(--size-md);
+    line-height: 1em;
+    text-transform: lowercase;
+    margin: 0 0 1rem 0;
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+    }
+  }
+
+  h4 {
+    font-family: var(--font-kyra-expanded-bold);
+    font-size: var(--size-md);
+    line-height: 1em;
+    text-transform: lowercase;
+    margin: 0;
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "/src/scss/variables.scss" as *;
+@use "/src/scss/breakpoints.scss" as *;
+
+.sectionBasic {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto;
+  padding: var(--size-xl) 0;
+  background: $black;
+  color: $green;
+  @include breakpoint(md){
+    padding: var(--padding-section);
+  }
+
+  .container {
+    @include container(lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 var(--size-sm);
+  }
+
+  h2 {
+    font-family: var(--font-kyra-expanded-bold-italic);
+    font-style: italic;
+    font-size: var(--size-md);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    text-align: center;
+    margin: 0;
+    margin-bottom: var(--size-lg);
+    @include breakpoint(md){
+      font-size: calc(var(--size-lg) * 2);
+    }
+  }
+
+  .textBlock {
+    display: block;
+    max-width: 660px;
+    + a {
+      margin-bottom: var(--size-md);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: var(--size-md);
+    font-size: var(--size-default);
+    line-height: 1.2em;
+    text-align: center;
+    + a {
+      margin-bottom: var(--size-md);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
