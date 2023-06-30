@@ -1,43 +1,64 @@
+"use client"
+import { useEffect, useState } from "react";
 import { PageWrapper } from "@/ui/templates";
 import { Hero } from "@/ui/organisms";
 import { Button } from "@/ui/atoms";
 
-async function getData() {
+async function fetchData() {
   const res = await fetch("https://strapi.kyra.com/home");
   if (!res.ok) {
     throw new Error("Failed");
   }
-  return res.json();
+  const data = await res.json();
+  return data.data.attributes;
 }
 
-export async function getServerSideProps() {
-  const data = await getData();
-  const siteData = data.data.attributes;
+export default function HomePage() {
+  const [headerVideoUrl, setHeaderVideoUrl] = useState("");
+  const [mobileVideoUrl, setMobileVideoUrl] = useState("");
+  const [heroItems, setHeroItems] = useState([]);
 
-  return {
-    props: {
-      headerVideoUrl: siteData.header_video.data.attributes.url,
-      mobileVideoUrl: siteData.header_video_m3u8,
-      heroItems: siteData.heroes.data.filter(
-        (item) => item.attributes.screen === "home"
-      ),
-    },
-  };
-}
+  useEffect(() => {
+    let isMounted = true;
 
-export default function HomePage({ headerVideoUrl, mobileVideoUrl, heroItems }) {
+    const fetchVideoData = async () => {
+      try {
+        const siteData = await fetchData();
+        const filteredHeroItems = siteData.heroes.data.filter(
+          (item) => item.attributes.screen === "home"
+        );
+
+        if (isMounted) {
+          setHeaderVideoUrl(siteData.header_video.data.attributes.url);
+          setMobileVideoUrl(siteData.header_video_m3u8);
+          setHeroItems(filteredHeroItems);
+        }
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      }
+    };
+
+    fetchVideoData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <PageWrapper>
-      <Hero
-        primary
-        videoUrl={headerVideoUrl}
-        mobileVideoUrl={mobileVideoUrl}
-        title={heroItems ? heroItems.map((item) => item.attributes.title) : []}
-        subtitle={heroItems ? heroItems.map((item) => item.attributes.subtitle) : []}
-      >
-        <Button link="/brands" label="brands" size="large" />
-        <Button link="/creators" label="creators" size="large" />
-      </Hero>
+      {headerVideoUrl && (
+        <Hero
+          primary
+          videoUrl={headerVideoUrl}
+          mobileVideoUrl={mobileVideoUrl}
+          title={heroItems.map((item) => item.attributes.title)}
+          subtitle={heroItems.map((item) => item.attributes.subtitle)}
+        >
+          <Button link="/brands" label="brands" size="large" />
+          <Button link="/creators" label="creators" size="large" />
+        </Hero>
+      )}
     </PageWrapper>
   );
 }
