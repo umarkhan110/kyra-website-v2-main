@@ -10,42 +10,30 @@ async function getData() {
   return res.json();
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await getData();
+  const siteData = data.data.attributes;
 
   return {
     props: {
-      data,
+      headerVideoUrl: siteData.header_video.data.attributes.url,
+      mobileVideoUrl: siteData.header_video_m3u8,
+      heroItems: siteData.heroes.data.filter(
+        (item) => item.attributes.screen === "home"
+      ),
     },
   };
 }
 
-export default async function Home({data}) {
-  console.log(data)
-  const siteData = data?.data.attributes;
-
-  // Header Video
-  const headerVideo = siteData.header_video;
-  const headerVideoUrl = headerVideo.data.attributes.url;
-  // Header Video Mobile
-  const mobileVideoUrl = siteData.header_video_m3u8;
-  // const mobileVideoUrl = mobileVideo.data.attributes.url;
-  // Hero
-  const hero = siteData.heroes.data;
-  const filteredHeroItems = hero.filter(
-    (item: any) => item.attributes.screen === "home"
-  );
-
+export default function Home({ headerVideoUrl, mobileVideoUrl, heroItems }) {
   return (
     <PageWrapper>
       <Hero
         primary
         videoUrl={headerVideoUrl}
         mobileVideoUrl={mobileVideoUrl}
-        title={filteredHeroItems.map((item: any) => item.attributes.title)}
-        subtitle={filteredHeroItems.map(
-          (item: any) => item.attributes.subtitle
-        )}
+        title={heroItems ? heroItems.map((item) => item.attributes.title) : []}
+        subtitle={heroItems ? heroItems.map((item) => item.attributes.subtitle) : []}
       >
         <Button link="/brands" label="brands" size="large" />
         <Button link="/creators" label="creators" size="large" />
