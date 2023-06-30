@@ -10,9 +10,19 @@ async function getData() {
   return res.json();
 }
 
-export default async function Home() {
+export async function getServerSideProps() {
   const data = await getData();
-  const siteData = data.data.attributes;
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default async function Home({data}) {
+  
+  const siteData = data?.data.attributes;
 
   // Header Video
   const headerVideo = siteData.header_video;
