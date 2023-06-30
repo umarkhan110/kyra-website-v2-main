@@ -10,7 +10,7 @@ async function getData() {
   return res.json();
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await getData();
   const siteData = data.data.attributes;
 
@@ -25,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ headerVideoUrl, mobileVideoUrl, heroItems }) {
+export default function HomePage({ headerVideoUrl, mobileVideoUrl, heroItems }) {
   return (
     <PageWrapper>
       <Hero
