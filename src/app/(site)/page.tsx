@@ -21,7 +21,7 @@ export async function getServerSideProps() {
 }
 
 export default async function Home({data}) {
-  
+  console.log(data)
   const siteData = data?.data.attributes;
 
   // Header Video
