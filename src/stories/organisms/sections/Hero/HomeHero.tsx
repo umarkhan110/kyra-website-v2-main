@@ -29,11 +29,11 @@ const HomeHero: React.FC<HeroProps> = ({
       <div className={styles.heroVideo}>
         {isMobile && mobileVideoUrl ? (
           <video autoPlay loop muted playsInline>
-            <source src="/images/header_106dad8c7c.mp4" type="application/x-mpegURL" />
+            <source src={mobileVideoUrl} type="application/x-mpegURL" />
           </video>
         ) : (
           <video autoPlay loop muted playsInline>
-            <source src="/images/header_106dad8c7c.mp4" type="video/mp4" />
+            <source src={headerVideoUrl} type="video/mp4" />
           </video>
         )}
       </div>
