@@ -56,7 +56,7 @@ const HomeHero: React.FC<HeroProps> = ({
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const res = await fetch("https://strapi.kyra.com/home");
     if (!res.ok) {
