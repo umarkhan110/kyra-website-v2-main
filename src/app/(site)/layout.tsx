@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, Suspense } from 'react';
 import NextTopLoader from "nextjs-toploader";
 import clsx from "clsx";
 import * as utils from "@/utils/fonts";
@@ -56,8 +53,7 @@ export default function RootLayout({
       <body className={bodyClasses}>
         <div className={styles.pageWrapper}>
           <Header />
-          <Suspense fallback={<p>Fast component loading...</p>}>{children}</Suspense>
-         
+          {children}
         </div>
         <CookieBanner />
         <NextTopLoader
